@@ -1,12 +1,12 @@
-import './App.css'
-
+import Navbar from "@/Components/Navbar/Navbar"
 function App() {
  
 
   return (
-    <>
-      <h1 className="font-bold text-red-500">Hello TailwindCSS with raeact</h1>
-    </>
+    <div className="app">
+      <h1 className="font-bold">Hello TailwindCSS with raeact</h1>
+      <Navbar />
+    </div>
   )
 }
 
