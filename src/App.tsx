@@ -1,11 +1,13 @@
-import Navbar from "@/Components/Navbar/Navbar"
-function App() {
- 
+import Navbar from "@/Components/Navbar/Navbar";
+import { useState} from "react";
+import { SelectedPage } from "./Shared/types";
 
+function App() {
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
+ 
   return (
     <div className="app">
-      <h1 className="font-bold">Hello TailwindCSS with raeact</h1>
-      <Navbar />
+      <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
     </div>
   )
 }
