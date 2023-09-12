@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         "gray-none":"#FFFFFF",
+        "gray-100":"#E5E5E5",
         "gray-200":"#F4F4F4",
         "gray-600":"#49516F",
         "primary-100":"#FBD1DD",
