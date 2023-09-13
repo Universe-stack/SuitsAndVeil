@@ -3,6 +3,8 @@ import { SelectedPage } from '@/Shared/types';
 import ActionButton from '@/Shared/ActionButton';
 import useMediaQuery from '@/hooks/useMediaQueries';
 import HeroImage from '@/assets/heropic.png';
+import DashedCircle from '@/assets/Group.png';
+import buttnPic from '@/assets/buttonPic.png';
 import Group from '@/assets/Group.png';
 import Searchbar from '@/Shared/Searchbar';
 
@@ -27,14 +29,14 @@ const Home = ({ setSelectedPage, query}: Props) => {
     setSearchResults(newResults)
   };
 
-  const flexBetween = "flex items-start justify-between";
+  const flexBetween = "flex items-center justify-between";
 
   return (
-    <section id='home' className= {`${flexBetween} gap-16 bg-gray-100 py-10 md:h-full md:pb-0`}>
+    <section id='home' className= {`${flexBetween} gap-16 bg-gray-100 py-10 md:h-full md:pb-0 relative`}>
       {/* IMAGE AND MAIN HEADER */}
       <div className='mx-auto flex w-5/6 flex-row justify-center align-middle gap-1'>
         {/* MAIN HEADER */}
-        <div className='mt-6 w-[70rem]'>
+        <div className='mt-6 flex-1 w-[100%]'>
           {/* MAIN TOP HEADER */}
           <div className='mx-auto w-full flex flex-col'>
             <span className='my-1 p-1'>
@@ -49,7 +51,7 @@ const Home = ({ setSelectedPage, query}: Props) => {
             </span>
 
             <span>
-              <p className='text-gray-600 text-[1.125rem] w-[23.5rem] pb-1'>
+              <p className='text-gray-600 font-[1.25rem] w-[23.5rem] pb-1'>
                 “ Once in a while, right in the middle of an ordinary life, love gives us a fairy tale. ”
               </p>
             </span>
@@ -99,9 +101,30 @@ const Home = ({ setSelectedPage, query}: Props) => {
           </div>
         </div>
       {/*IMAGE*/}
-      <div className='object-cover mx-auto w-full'>
-        <img src={HeroImage} alt='hero-image' className='ml-5 w-full h-full '/>
+      <div className='object-cover mx-auto w-full flex-1'>
+        <img src={HeroImage} alt='hero-image' className='ml-5 w-full h-full transform rotate-[-0.894deg]'/>
       </div>
+      </div>
+
+      {/** Image at the far right */}
+      <img src={DashedCircle} alt='dashed circle' className='absolute right-0 top-[-3.5rem]'/>
+
+      {/** Button image at the buttom */}
+      <img src={buttnPic} alt='dashed circle' className='absolute right-[11.7rem] bottom-[6.1rem]'/>
+
+      
+      {/** Basket buttom */}
+      <div className='absolute bottom-[2%] right-[15rem]'>
+        <button className='text-secondary-blue bg-gray-none text-300 py-3 px-4 rounded-full flex'>
+          <span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+</svg>
+          </span>
+
+          <span>
+            <p>Your basket(4)</p>
+          </span>
+        </button>
       </div>
     </section>
   );

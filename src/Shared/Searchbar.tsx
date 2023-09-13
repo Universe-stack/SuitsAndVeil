@@ -28,7 +28,7 @@ const Searchbar = ({ placeholder, query, onSearch }: Props) => {
   return (
 
 <div className="">
-  <div className="bg-white shadow-md w-[31.5rem] h-[3.875rem] flex flex-row items-center justify-between p-1.5 rounded-xl">
+  <div className="bg-white shadow-md w-[100%] h-[3.875rem] flex flex-row items-center justify-between p-1.5 rounded-xl">
     {/* Input bar */}
     <div className='pl-[1.5rem]'>
       <input
