@@ -1,8 +1,11 @@
 import Navbar from "@/Components/Navbar/Navbar";
 import { useState, useEffect} from "react";
+import {Link, Route, Routes} from 'react-router-dom'
 import { SelectedPage } from "./Shared/types";
 import Home from "@/Components/Home/Home";
 import Gallery from "./Components/Gallery/Gallery";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Supplies from "./Components/Supplies/Supplies";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
@@ -26,8 +29,11 @@ function App() {
       <Navbar
       isTopOfPage={isTopOfPage}
       selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-      <Home />
-      <Gallery />
+      <Routes>
+        <Route path= "/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/supplies" element={<Supplies/>}/>
+      </Routes>
     </div>
   )
 }

@@ -7,6 +7,7 @@ import DashedCircle from '@/assets/Group.png';
 import buttnPic from '@/assets/buttonPic.png';
 import Group from '@/assets/Group.png';
 import Searchbar from '@/Shared/Searchbar';
+import Gallery from '../Gallery/Gallery';
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -32,6 +33,7 @@ const Home = ({ setSelectedPage, query}: Props) => {
   const flexBetween = "flex items-center justify-between";
 
   return (
+    <>
     <section id='home' className= {`${flexBetween} gap-16 bg-gray-100 py-10 md:h-full md:pb-0 relative`}>
       {/* IMAGE AND MAIN HEADER */}
       <div className='mx-auto flex w-5/6 flex-row justify-center align-middle gap-1'>
@@ -127,6 +129,8 @@ const Home = ({ setSelectedPage, query}: Props) => {
         </button>
       </div>
     </section>
+    <Gallery/>
+    </>
   );
 };
 
