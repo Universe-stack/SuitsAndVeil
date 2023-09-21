@@ -38,7 +38,7 @@ const Home = ({ setSelectedPage, query}: Props) => {
       {/* IMAGE AND MAIN HEADER */}
       <div className='mx-auto flex w-5/6 flex-row justify-center align-middle gap-1'>
         {/* MAIN HEADER */}
-        <div className='mt-6 flex-1 w-[100%]'>
+        <div className='mt-6 w-[100%]'>
           {/* MAIN TOP HEADER */}
           <div className='mx-auto w-full flex flex-col'>
             <span className='my-1 p-1'>
@@ -103,7 +103,7 @@ const Home = ({ setSelectedPage, query}: Props) => {
           </div>
         </div>
       {/*IMAGE*/}
-      <div className='object-cover mx-auto w-full flex-1'>
+      <div className='object-cover mx-auto w-full'>
         <img src={HeroImage} alt='hero-image' className='ml-5 w-full h-full transform rotate-[-0.894deg]'/>
       </div>
       </div>

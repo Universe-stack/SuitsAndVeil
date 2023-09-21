@@ -25,7 +25,7 @@ function App() {
   }, [])
 
   return (
-    <div className="app">
+    <div className="app h-64 overflow-y-scroll">
       <Navbar
       isTopOfPage={isTopOfPage}
       selectedPage={selectedPage} setSelectedPage={setSelectedPage} />

@@ -16,6 +16,7 @@ export default {
         "primary-800":"#B73058",
         "secondary-blue":"#5465FF",
         "secondary-yellow":"#FFC200",
+        "border-gray": "#EBEFF2"
       },
       backgroundImage: (theme)=> ({
         "gradient-pinkwhite":"background: #FBD3E9;-webkit-linear-gradient(to right, #BB377D, #FBD3E9);linear-gradient(to right, #BB377D, #FBD3E9)",
