@@ -22,14 +22,14 @@ const Navbar = ({isTopOfPage, selectedPage,setSelectedPage}: Props) => {
 
      // Check if the current route is '/dashboard'
   useEffect(() => {
-    setIsDashboardRoute(location.pathname === 'dashboard');
+    location.pathname === '/'?setIsDashboardRoute(true):setIsDashboardRoute(false)
   }, [location.pathname]);
 
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const navbarBackground = isTopOfPage ? "bg-gray-none" : "bg-primary-100 drop-shadow";
-  const navbarStyle = isDashboardRoute ? 'fixed' : 'relative';
+  const navbarStyle = isDashboardRoute ? 'fixed' : 'static';
 
   return (
     <nav>
