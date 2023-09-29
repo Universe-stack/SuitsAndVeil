@@ -1,5 +1,7 @@
 import React from 'react';
-import manOnPink from '@/assets/manOnPink.png'
+import manOnPink from '@/assets/manOnPink.png';
+import ImageCircles from '@/UI/ImageCircles/ImageCircles';
+import { Link, Outlet } from 'react-router-dom';
 
 type Props = {}
 
@@ -36,6 +38,64 @@ const ActiveList = (props: Props) => {
               <p className='text-sm'>TOTAL VALUE</p>
             </div>
           </div>
+
+{/**White Lists */}
+          <div className='flex flex-col gap-1'>
+            <Link to={`/dashboard/activelist/${1}`}>
+            <div className='flex bg-gray-none justify-between p-5 rounded-md w-full'>
+            <div>
+              <p>Wedding</p>
+              <p  className='text-sm'>{`${143}`} items</p>
+            </div>
+
+            <div className='flex gap-4 align-middle justify-center'>
+              <p className='text-xl font-bold text-center self-center'>$1,340</p>
+              <div>
+                <ImageCircles />
+              </div>
+
+              <p className='text-sm text-center self-center'>+{`${7}`} editors</p>
+            </div>
+            </div>
+            </Link>
+
+            <Link to={`/dashboard/activelist/${2}`}>
+            <div className='flex bg-gray-none justify-between p-5 rounded-md w-full'>
+            <div>
+              <p>Wedding</p>
+              <p  className='text-sm'>{`${143}`} items</p>
+            </div>
+
+            <div className='flex gap-4 align-middle justify-center'>
+              <p className='text-xl font-bold text-center self-center'>$1,340</p>
+              <div>
+                <ImageCircles />
+              </div>
+
+              <p className='text-sm text-center self-center'>+{`${7}`} editors</p>
+            </div>
+            </div>
+            </Link>
+
+            <Link to={`/dashboard/activelist/${3}`}>
+            <div className='flex bg-gray-none justify-between p-5 rounded-md w-full'>
+            <div>
+              <p>Wedding</p>
+              <p  className='text-sm'>{`${143}`} items</p>
+            </div>
+
+            <div className='flex gap-4 align-middle justify-center'>
+              <p className='text-xl font-bold text-center self-center'>$1,340</p>
+              <div>
+                <ImageCircles />
+              </div>
+
+              <p className='text-sm text-center self-center'>+{`${7}`} editors</p>
+            </div>
+            </div>
+            </Link>
+          </div>
+
         </div>
     </div>
   )

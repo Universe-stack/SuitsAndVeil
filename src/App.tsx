@@ -6,6 +6,11 @@ import Home from "@/Components/Home/Home";
 import Gallery from "./Components/Gallery/Gallery";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Supplies from "./Components/Supplies/Supplies";
+import DashboardMain from "./Components/Dashboard/DashboardMain/DashboardMain";
+import ActiveList from "./Components/Dashboard/Lists/ActiveList";
+import ActiveListItems from "./Components/Dashboard/Lists/ActiveListItems/ActiveListItems";
+
+
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
@@ -31,7 +36,12 @@ function App() {
       selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <Routes>
         <Route path= "/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path={"dashboard"} element={<Dashboard />}>
+        <Route index element={<DashboardMain />} />
+        <Route path={`activelist`} element={<ActiveList />} />
+        <Route path={`activelist/:id`} element={<ActiveListItems />} />
+    </Route>
+      {/* Add more dashboard-specific routes as needed */}
         <Route path="/supplies" element={<Supplies/>}/>
       </Routes>
     </div>

@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {Link}  from 'react-router-dom';
+import {Link, Outlet}  from 'react-router-dom';
 import ActiveList from './Lists/ActiveList';
 import DashboardMain from './DashboardMain/DashboardMain';
 
@@ -99,7 +99,8 @@ const Dashboard = () => {
 
 
       <div className=' w-5/6 h-[100%] text-black '>
-        {activeComponent?activeComponent: <DashboardMain />}
+        {/*activeComponent?activeComponent: <DashboardMain />*/}
+        <Outlet />
       </div>
     </section>
   )

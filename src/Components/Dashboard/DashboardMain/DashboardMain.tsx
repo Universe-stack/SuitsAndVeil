@@ -27,6 +27,7 @@ data: BudgetData.map(data=>data.inflow)
   fill: false,
   lineTension: 0.5,
   backgroundColor: 'pink',
+  
   borderColor: 'rgba(0,0,0,1)',
   borderWidth: 2,
   data: BudgetData.map(data=>data.Outflow)
