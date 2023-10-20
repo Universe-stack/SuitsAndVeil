@@ -5,11 +5,14 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
+import { AuthProvider } from './StateContext/AuthProvider.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <AuthProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>,
 )

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { useAuth } from '@/StateContext/AuthContext';
+import axios from 'axios';
 
 const Signup: React.FC = () => {
 
@@ -12,14 +13,30 @@ const Signup: React.FC = () => {
     username:''
   });
 
-  const handleSignup = async () => {
+  const handleSignup = async (e:FormEvent) => {
+    e.preventDefault();
     try {
-      // Send a POST request to your backend and dispatch 'SIGNUP' or 'ERROR' based on the response
-      // Example: axios.post('/signup', formData)
-      dispatch({ type: 'SIGNUP', payload: { username: 'John', email: formData.email } });
-    } catch (error:string|any) {
+      const response = await axios.post('http://localhost:8800/register', formData); // Adjust the URL as needed
+
+      if (response.status === 200) {
+        // If the response status is 200 (OK), dispatch 'SIGNUP'
+        console.log("successful:", response)
+        dispatch({ type: 'SIGNUP', payload: { username: formData.username, email: formData.email, role: formData.role, password: formData.password } });
+      } else {
+        // Handle other response status codes as needed and dispatch 'ERROR'
+        dispatch({ type: 'ERROR', payload: 'An error occurred during signup.' });
+      }
+
+      setFormData({email: '',
+      password: '',
+      role: '',
+      name:'',
+      username:''})
+
+    } catch (error) {
       dispatch({ type: 'ERROR', payload: error.message });
     }
+    
   };
   const [showEmailForm, setShowEmailForm] = useState(false);
   const [showGoogleForm, setShowGoogleForm] = useState(false);
@@ -137,6 +154,7 @@ const Signup: React.FC = () => {
             <button
               className="cursor-pointer font-[600] text-[14px] p-[24px] text-[#FFFFFF] bg-[#0d0c22] rounded-full hover:bg-[#FF477E] hover:text-[#FFFFFF] w-[100%] text-center border-[2px] border-[#0d0c22]"
               type="submit"
+              onClick={handleSignup}
             >
               Submit
             </button>

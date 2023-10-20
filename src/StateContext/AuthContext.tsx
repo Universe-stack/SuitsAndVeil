@@ -13,6 +13,7 @@ type AuthState = {
   user: User | null;
   loading: boolean;
   error: string | null;
+  isAuthenticated:boolean
 };
 
 type AuthAction =
@@ -31,14 +32,15 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
   user: null,
   loading: false,
   error: null,
+  isAuthenticated:false
 };
 
  export const authReducer = (state: AuthState, action: AuthAction): AuthState => {
   switch (action.type) {
     case 'SIGNUP':
-      return { ...state, user: action.payload, loading: false, error: null };
+      return { ...state, user: action.payload, loading: false, error: null, isAuthenticated: true };
     case 'SIGNIN':
-      return { ...state, user: action.payload, loading: false, error: null };
+      return { ...state, user: action.payload, loading: false, error: null, isAuthenticated:true };
     case 'ERROR':
       return { ...state, error: action.payload, loading: false };
     default:

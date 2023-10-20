@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.0.18",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/themes": "^1.1.2",
+    "axios": "^1.5.1",
     "chart.js": "^4.4.0",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
@@ -39,5 +40,6 @@
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
-  }
+  },
+  "proxy": "http://localhost:8800"
 }
