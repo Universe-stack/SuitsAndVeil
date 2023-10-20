@@ -1,11 +1,13 @@
 import {useState, useEffect} from "react";
 import { Bars3Icon,XMarkIcon } from "@heroicons/react/24/solid";
-import  Link  from "../Navbar/Link";
+import  Links  from "../Navbar/Link";
 import {SelectedPage} from "@/Shared/types";
 import useMediaQuery from "@/hooks/useMediaQueries";
 import ActionButton from "@/Shared/ActionButton";
 import Logo from '@/assets/Logo.png'
 import {useLocation} from 'react-router-dom';
+import { Link } from "react-router-dom";
+
 
 
 
@@ -42,15 +44,15 @@ const Navbar = ({isTopOfPage, selectedPage,setSelectedPage}: Props) => {
                 {isAboveMediumScreens?(
                     <div className={`${flexBetween} w-full`}>
                         <div className={`${flexBetween} gap-8 text-sm`}>
-                            <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-                            <Link page="Dashboard" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-                            <Link page="Suppliers" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-                            <Link page="About" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+                            <Links page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+                            <Links page="Dashboard" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+                            <Links page="Suppliers" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+                            <Links page="About" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                         </div>
 
                         <div className={`${flexBetween} gap-6 text-[1.125rem]`}>
                             <p className="text-[1.125rem] font-600 ml-1 cursor-pointer">Sign In</p>
-                            <ActionButton setSelectedPage={setSelectedPage}>Sign up</ActionButton>
+                            <Link to={"/signup"}  className='rounded-md text-gray-none bg-primary-600 px-10 py-2 font-[600] text-[1.125rem] hover:bg-primary-800 hover:text-white'>Sign up</Link>
                         </div>
                     </div>):(
                         <div>
@@ -77,10 +79,10 @@ const Navbar = ({isTopOfPage, selectedPage,setSelectedPage}: Props) => {
 
                  {/* MENU ITEMS*/}
                         <div className={`ml-[33%] flex flex-col gap-10 text-2xl`}>
-                            <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-                            <Link page="Dashboard" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-                            <Link page="Suppliers" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-                            <Link page="About" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+                            <Links page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+                            <Links page="Dashboard" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+                            <Links page="Suppliers" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+                            <Links page="About" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                         </div>
             </div>
         )}
