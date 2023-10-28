@@ -1,15 +1,6 @@
-import React,{useState} from 'react'
 import {Link, Outlet}  from 'react-router-dom';
-import ActiveList from './Lists/ActiveList';
-import DashboardMain from './DashboardMain/DashboardMain';
 
 const Dashboard = () => {
-
-  const [activeComponent, setActiveComponent] = useState<JSX.Element | null>(null)
-
-  const showComponent=(component:JSX.Element) => {
-    setActiveComponent(component)
-  }
 
   return (
     <section className='text-center w-full flex bg-gray-100  border-2 border-t-border-gray'>
@@ -70,7 +61,7 @@ const Dashboard = () => {
 <Link to= "#"> <p className=''>Orders</p></Link></span>
 </div>
 
-<div> <p className='font-[600] text-left mx-[1.5rem] text-sm mt-7' onClick={()=>setActiveComponent(<Items />)}>SETTINGS</p></div>
+<div> <p className='font-[600] text-left mx-[1.5rem] text-sm mt-7'>SETTINGS</p></div>
 
 <div className='flex flex-col justify-left mx-[1.5rem]'>
 <span className='h-[1.25rem] text-center w-full flex align-middle gap-4 my-5'> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

@@ -1,11 +1,11 @@
 import Navbar from "@/Components/Navbar/Navbar";
 import { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom'; // Import useLocation
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { SelectedPage } from "./Shared/types";
 import Home from "@/Components/Home/Home";
 import Signup from "@/Components/Signup/Signup";
-import Gallery from "./Components/Gallery/Gallery";
+//import Gallery from "./Components/Gallery/Gallery";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Supplies from "./Components/Supplies/Supplies";
 import DashboardMain from "./Components/Dashboard/DashboardMain/DashboardMain";
@@ -42,7 +42,7 @@ function App() {
         />
       )}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home query="" onSearch={()=>null} setSelectedPage={()=>null}/>} />
 
         <Route path={"dashboard"} element={<Dashboard />}>
           <Route index element={<DashboardMain />} />

@@ -1,37 +1,35 @@
-import React from 'react'
-import paws from "@/assets/paws.png"
+import React from 'react';
 
-
-enum ProductEnum{
-    name = "paws",
-    description= "paws is a nice design",
-    category ="pets",
-    price = 344,
-    image = "@/assets/paws.png"
+interface Product {
+  name: string;
+  description: string;
+  category: string;
+  price: number;
+  image: string;
 }
 
-interface Props{
-    product: typeof ProductEnum
-}
+type Props = {
+  product: Product;
+};
 
-const Product = ({product}) => {
+const ProductComponent: React.FC<Props> = ({ product }) => {
   return (
     <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
       <div className="md:flex flex-col">
         <div className="md:flex-shrink-0">
           <img
             className="h-[100%] w-[100%] object-contain md:w-[100%]"
-            src={paws}
-            alt={ProductEnum.name}
+            src={product.image}
+            alt={product.name}
           />
         </div>
         <div className="p-8">
           <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-            {ProductEnum.category}
+            {product.category}
           </div>
-          <p className="mt-2 text-gray-500">{ProductEnum.description}</p>
+          <p className="mt-2 text-gray-500">{product.description}</p>
           <div className="mt-4">
-            <span className="text-gray-900 font-semibold">${ProductEnum.price}</span>
+            <span className="text-gray-900 font-semibold">${product.price}</span>
             <span className="ml-2 text-sm text-gray-600">USD</span>
           </div>
         </div>
@@ -40,4 +38,4 @@ const Product = ({product}) => {
   );
 };
 
-export default Product
+export default ProductComponent;

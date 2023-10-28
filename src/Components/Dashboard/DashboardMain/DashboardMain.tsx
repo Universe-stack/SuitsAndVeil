@@ -1,15 +1,21 @@
-import React, {useState} from 'react'
+import React from 'react';
 import Chart from '../chart/Chart';
 import {BudgetData} from '@/Data';
 import Product from '@/UI/Product/Product';
+import paws from "@/assets/paws.png"
 
-type Props = {
-  chartData:any
-}
 
-const DashboardMain = (props: Props) => {
+const DashboardMain = () => {
 
-  const [budgetData, setBudgetData] = useState({
+  const product1 = {
+    name: "string",
+    description: "string",
+    category: "string",
+    price: 23,
+    image: paws
+  }
+
+  const [budgetData] = React.useState({
     labels: BudgetData.map(data=>data.month),
 datasets: [
 {
@@ -114,8 +120,8 @@ data: BudgetData.map(data=>data.inflow)
           <h2 className='text-left ml-2 text-lg font-bold'>New Arrivals</h2>
 
           <div className="grid grid-cols-4 gap-4 py-6">
-            <Product />
-            <Product />
+            <Product product={product1} />
+            <Product product={product1} />
           </div>
         </div>
     </section>

@@ -1,11 +1,10 @@
-import React from 'react';
 import manOnPink from '@/assets/manOnPink.png';
 import ImageCircles from '@/UI/ImageCircles/ImageCircles';
-import { Link, Outlet } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
-type Props = {}
+// type Props = {}
 
-const ActiveList = (props: Props) => {
+const ActiveList = () => {
   return (
     <div className='w-full h-[100%] flex align-middle justify-center bg-gray-100 text-gray-600'>
         <div className='w-4/5 py-6 '>
@@ -31,8 +30,7 @@ const ActiveList = (props: Props) => {
             <p>Groom</p></div>
             </div>
             </div>
-            
-
+          
             <div> 
               <p className='font-bold text-2xl'>$2567</p>
               <p className='text-sm'>TOTAL VALUE</p>

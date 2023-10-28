@@ -1,27 +1,42 @@
-import React from 'react';
-
 import { Chart as ChartJS,ArcElement, Tooltip,Legend } from 'chart.js/auto';
 import {Line} from 'react-chartjs-2'
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-type Props = {}
+interface ChartData {
+  labels: string[];
+  datasets: {
+    label: string;
+    fill: boolean;
+    lineTension: number;
+    backgroundColor: string;
+    borderColor: string;
+    borderWidth: number;
+    data: number[];
+  }[];
+}
 
-const Chart = ({chartData}: Props) => {
-  return <Line data={chartData} options={
-    {
-      title:{
-        display:true,
-        text:'Average Rainfall per month',
-        fontSize:20
-      },
-      legend:{
-        display:true,
-        position:'right'
-      }
-    }
-  }/>
+type Props = {
+  chartData:ChartData
+}
+
+const Chart = ({chartData}:Props) => {
+  return <Line 
+            data={chartData}
+                  options={{
+                    responsive: true,
+                    plugins: {
+                      title: {
+                        display: false,
+                        text: 'Progression of budget',
+                      },
+                      legend: {
+                        position: 'top' as const,
+                        display: true,
+                      },
+                    },
+      }}/>
 }
 
 export default Chart
