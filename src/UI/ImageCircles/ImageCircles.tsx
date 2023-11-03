@@ -1,5 +1,3 @@
-import React from 'react';
-
 import manOnPink from "@/assets/manOnPink.png";
 import womanOnPink from "@/assets/womanOnPink.png";
 import womanOnWhite from "@/assets/womanOnWhite.png"
