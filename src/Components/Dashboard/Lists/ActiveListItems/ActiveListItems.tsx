@@ -1,13 +1,9 @@
 import ImageCircles from '@/UI/ImageCircles/ImageCircles'
-import React from 'react';
-import { Table } from '@radix-ui/themes';
 import paws from '@/assets/manOnSuit.png'
 import ItemTable from '@/UI/ItemTable/ItemTable';
 
 
-type Props = {}
-
-const ActiveListItems = (props: Props) => {
+const ActiveListItems = () => {
   return (
     <section className='w-full h-[100%] flex align-middle justify-center bg-gray-100 text-gray-600'>
       <div className='w-[90%] py-6 flex justify-between gap-8'>
@@ -76,7 +72,7 @@ const ActiveListItems = (props: Props) => {
         </div>
 
         <div className=' bg-white px-5 my-1 py-3'>
-          <ItemTable paws={paws} />
+          <ItemTable paws={paws} item='' img='' quantity={2} name='' price={45}/>
         </div>
       </div>
      </div>

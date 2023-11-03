@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface Item {
+  img: string
   item: string;
   name: string;
   quantity: number;
   price: number;
+  paws:string
 }
 
-const ItemTable: React.FC = (props) => {
+const ItemTable = (props:Item) => {
   const [hoveredTdIndex, setHoveredTdIndex] = useState<number | null>(null);
 
   const paws = props.paws;
-  const [items] = useState<Item[]>([
+
+  const [items] = useState([
     { item: 'Item 1', name: 'Product A', quantity: 2, price: 10.0, img: paws },
     { item: 'Item 2', name: 'Product B', quantity: 3, price: 15.0, img: paws },
     { item: 'Item 3', name: 'Product C', quantity: 1, price: 5.0, img: paws },

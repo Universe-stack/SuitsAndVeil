@@ -7,10 +7,9 @@ const override: CSSProperties = {
   borderColor: "blue",
 };
 
-function ModalLoading(load) {
+function ModalLoading() {
 
-  const [loading, setLoading] = useState(true);
-  const [color, setColor] = useState("#EEEEEE");
+  const [loading] = useState(true);
 
   return (
     <div className="sweet-loading absolute top-[50%] z-40">
