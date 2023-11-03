@@ -23,13 +23,20 @@ function App() {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
         setSelectedPage(SelectedPage.Home);
+        console.log("Top of page!", isTopOfPage);
+        alert('There');
+      } else {
+        setIsTopOfPage(false); // Set isTopOfPage to false when not at the top
+        console.log(isTopOfPage);
       }
-    }
-    if (window.screenY !== 0) setIsTopOfPage(false);
-
+    };
+  
     window.addEventListener("scroll", handleScroll);
+  
+    // Clean up the event listener when the component unmounts
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isTopOfPage]);
+  
 
   return (
     <AuthProvider>
@@ -38,7 +45,6 @@ function App() {
         <Navbar
           isTopOfPage={isTopOfPage}
           selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
         />
       )}
       <Routes>

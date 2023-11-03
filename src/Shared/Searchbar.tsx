@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CalendarDaysIcon } from '@heroicons/react/24/solid';
+//import { CalendarDaysIcon } from '@heroicons/react/24/solid';
 
 type Props = {
   placeholder: string;

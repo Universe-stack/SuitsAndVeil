@@ -1,20 +1,12 @@
-import { SelectedPage } from "@/Shared/types";
 import gallery from '@/assets/gallery.jpg';
 import manOnPink from '@/assets/manOnPink.png';
-import manOnHoodie from '@/assets/manOnHoodie.png'
 import manOnWhite from '@/assets/manOnWhite.png'
 import womanOnPink from'@/assets/womanOnPink.png'
 import womanOnBlack from '@/assets/womanOnBlack.png'
-import AnchorLink from "react-anchor-link-smooth-scroll"
-
-type Props = {
-    page:string;
-    selectedPage: SelectedPage;
-    setSelectedPage: (value:SelectedPage)=>void
-}
 
 
-const Gallery = ( Props:Props) => {
+
+const Gallery = () => {
     return(
         <section className="h-[30rem] bg-yellow flex flex-col">
             <div className=" w-full text-center text-gray-600 text-[1.5rem] tect-bold my-[4.5rem]"> 

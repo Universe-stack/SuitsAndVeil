@@ -57,7 +57,8 @@ const Signup: React.FC = () => {
   const handleSignup = async (e:FormEvent) => {
     e.preventDefault();
     setLoad(true)
-    if (!document.getElementById('termsCheckbox').checked) {
+    const termsCheckbox = document.getElementById('termsCheckbox') as HTMLInputElement;
+    if (termsCheckbox && !termsCheckbox.checked) {
       //alert('Please agree to the terms of service before submitting the form.');
       notify()
       setLoad(false)
@@ -70,7 +71,7 @@ const Signup: React.FC = () => {
       if (response.status === 200) {
         // If the response status is 200 (OK), dispatch 'SIGNUP'
         console.log("successful:", response)
-        dispatch({ type: 'SIGNUP', payload: { username: formData.username, email: formData.email, role: formData.role, password: formData.password } });
+        dispatch({ type: 'SIGNUP', payload: { username: formData.username, email: formData.email, role: formData.role, password: formData.password, name: formData.name } });
         setLoad(false)
       } else {
         // Handle other response status codes as needed and dispatch 'ERROR'
@@ -85,7 +86,15 @@ const Signup: React.FC = () => {
       username:''})
 
     } catch (error) {
-      dispatch({ type: 'ERROR', payload: error.message });
+      if (error instanceof Error) {
+        // It's an error object
+        dispatch({ type: 'ERROR', payload: error.message });
+    } else if (typeof error === 'string') {
+        // It's a string
+        dispatch({ type: 'ERROR', payload: error });
+    } else {
+        console.log("Unknown error type: " + error);
+    }
     }
     
   };

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+//import React, { useState } from 'react';
 import { SelectedPage } from '@/Shared/types';
-import ActionButton from '@/Shared/ActionButton';
-import useMediaQuery from '@/hooks/useMediaQueries';
+//import ActionButton from '@/Shared/ActionButton';
+//import useMediaQuery from '@/hooks/useMediaQueries';
 import HeroImage from '@/assets/heropic.png';
 import DashedCircle from '@/assets/Group.png';
 import buttnPic from '@/assets/buttonPic.png';
-import Group from '@/assets/Group.png';
+//import Group from '@/assets/Group.png';
 import Searchbar from '@/Shared/Searchbar';
 import Gallery from '../Gallery/Gallery';
 
@@ -15,19 +15,16 @@ type Props = {
   onSearch: (query: string) => void;
 };
 
-const Home = ({ setSelectedPage, query}: Props) => {
-  const [searchResults, setSearchResults] = useState([]);
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+const Home = ({ query}: Props) => {
+ // const [searchResults, setSearchResults] = useState([]);
+  //const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   // Define the handleSearch function to handle search queries
-  const handleSearch = (query:string) => {
-    // Replace this with your actual search logic
-    // For example, you can make an API request to fetch search results
-    // and then update the searchResults state with the results.
-    // setSearchResults(newSearchResults);
-    // Finally, call the onSearch function to pass the query to the parent component.
-    const newResults = query;
-    setSearchResults(newResults)
+
+  const handleSearch = () => {
+
+    //const newResults = query;
+    //setSearchResults(newResults)
   };
 
   const flexBetween = "flex items-center justify-between";
